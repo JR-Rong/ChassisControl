@@ -4,12 +4,10 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "D:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/15.1.0/include/c++",
-                "D:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/15.1.0/include/c++/x86_64-w64-mingw32",
-                "D:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/15.1.0/include/c++/backward",
-                "D:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/15.1.0/include",
-                "D:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/15.1.0/include-fixed",
-                "D:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/15.1.0/../../../../x86_64-w64-mingw32/include"
+                "${workspaceFolder}",
+                "${workspaceFolder}/include/Vehicle_Control",
+                "${workspaceFolder}/include/Vehicle_Data_Input",
+                "${workspaceFolder}/include/Vehicle_Data_Output"
             ],
             "defines": [
                 "_DEBUG",
@@ -18,7 +16,19 @@
             ],
             "cStandard": "c17",
             "cppStandard": "gnu++17",
-            "intelliSenseMode": "windows-gcc-x64"
+            "intelliSenseMode": "windows-gcc-x64",
+            "compilerPath": "D:/MinGW/bin/g++.exe",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/**",
+                    "${workspaceFolder}",
+                    "${workspaceFolder}/include/Vehicle_Control",
+                    "${workspaceFolder}/include/Vehicle_Data_Input",
+                    "${workspaceFolder}/include/Vehicle_Data_Output"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
         }
     ],
     "version": 4

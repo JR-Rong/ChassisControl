@@ -6,6 +6,9 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+# 添加DLL导出定义
+add_definitions(-DCHASSIS_CONTROL_EXPORTS)
+
 # 构建类型，如果没有指定则使用Release
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
@@ -27,88 +30,80 @@ set(CHASSIS_CONTROL_VERSION_MINOR 0)
 set(CHASSIS_CONTROL_VERSION_PATCH 0)
 set(CHASSIS_CONTROL_VERSION "${CHASSIS_CONTROL_VERSION_MAJOR}.${CHASSIS_CONTROL_VERSION_MINOR}.${CHASSIS_CONTROL_VERSION_PATCH}")
 
-# 查找依赖包
-find_package(yaml-cpp REQUIRED)
-
 # 设置包含目录
 include_directories(
+  ${PROJECT_SOURCE_DIR}
   ${PROJECT_SOURCE_DIR}/include
-  ${YAML_CPP_INCLUDE_DIR}
+  ${PROJECT_SOURCE_DIR}/include/Vehicle_Data_Input
 )
 
 # 添加数据输入模块源文件
 set(DATA_INPUT_SOURCES
-  src/data_input/vehicle_config.cpp
-  src/data_input/state_estimator.cpp
-)
-
-# 添加车辆控制模块源文件
-set(VEHICLE_CONTROL_SOURCES
-  src/vehicle_control/vehicle_model.cpp
-  src/vehicle_control/torque_allocator.cpp
-  src/vehicle_control/torque_smoother.cpp
-  src/vehicle_control/tire_model.cpp
-)
-
-# 添加数据输出模块源文件
-set(DATA_OUTPUT_SOURCES
-  src/data_output/can_bus_interface.cpp
-)
-
-# 添加高层接口源文件
-set(API_SOURCES
-  src/chassis_control.cpp
+  ${PROJECT_SOURCE_DIR}/src/Vehicle_Data_Input/VehicleDataInput.cpp
 )
 
 # 添加所有源文件到一个列表中
 set(ALL_SOURCES
   ${DATA_INPUT_SOURCES}
-  ${VEHICLE_CONTROL_SOURCES}
-  ${DATA_OUTPUT_SOURCES}
-  ${API_SOURCES}
 )
 
 # 创建单一的动态链接库，包含所有模块
 add_library(chassis_control ${ALL_SOURCES})
+
+# 设置库属性
 set_target_properties(chassis_control PROPERTIES
-  VERSION ${CHASSIS_CONTROL_VERSION}
-  SOVERSION ${CHASSIS_CONTROL_VERSION_MAJOR}
-  PUBLIC_HEADER "include/chassis_control.h"
+    VERSION ${CHASSIS_CONTROL_VERSION}
+    SOVERSION ${CHASSIS_CONTROL_VERSION_MAJOR}
+    PUBLIC_HEADER "${PROJECT_SOURCE_DIR}/chassis_control.h"
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+    LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+    ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
 )
 
-# 链接依赖库
-target_link_libraries(chassis_control
-  ${YAML_CPP_LIBRARIES}
-  pthread
+# 设置库的包含目录
+target_include_directories(chassis_control
+    PUBLIC
+        $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>
+        $<INSTALL_INTERFACE:include>
+    PRIVATE
+        ${PROJECT_SOURCE_DIR}/src
 )
 
 # 示例程序
-add_executable(basic_control_example examples/basic_control_example.cpp)
+add_executable(basic_control_example ${CMAKE_SOURCE_DIR}/examples/basic_control_example.cpp)
 target_link_libraries(basic_control_example
+    PRIVATE
     chassis_control
-    ${YAML_CPP_LIBRARIES}
-    pthread
 )
 
-# API示例程序
-add_executable(simple_api_example examples/simple_api_example.cpp)
-target_link_libraries(simple_api_example
-    chassis_control
-    ${YAML_CPP_LIBRARIES}
-    pthread
+target_include_directories(basic_control_example
+    PRIVATE
+    ${PROJECT_SOURCE_DIR}
 )
 
-# 生成并安装导出目标
-install(TARGETS chassis_control
-  EXPORT chassis_control-targets
-  LIBRARY DESTINATION lib
-  ARCHIVE DESTINATION lib
-  RUNTIME DESTINATION bin
-  PUBLIC_HEADER DESTINATION include
+# 设置示例程序的输出目录
+set_target_properties(basic_control_example PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+)
+
+# 自动复制DLL到示例程序目录
+add_custom_command(TARGET basic_control_example POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+    $<TARGET_FILE:chassis_control>
+    $<TARGET_FILE_DIR:basic_control_example>
 )
 
 # 安装头文件（只安装公共接口头文件）
-install(FILES include/chassis_control.h DESTINATION include)
+install(FILES chassis_control.h DESTINATION include)
+
+# 生成并安装导出目标
+install(TARGETS chassis_control basic_control_example
+    EXPORT chassis_control-targets
+    RUNTIME DESTINATION bin
+    LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib
+    PUBLIC_HEADER DESTINATION include
+)
 
 # 创建并安装版本配置文件
 include(CMakePackageConfigHelpers)
@@ -136,9 +131,6 @@ install(FILES
   "${CMAKE_CURRENT_BINARY_DIR}/chassis_control-config-version.cmake"
   DESTINATION lib/cmake/chassis_control
 )
-
-# 安装可执行文件
-install(TARGETS basic_control_example simple_api_example DESTINATION bin)
 
 # 打印配置信息
 message(STATUS "ChassisControl ${CHASSIS_CONTROL_VERSION} build configuration:")
