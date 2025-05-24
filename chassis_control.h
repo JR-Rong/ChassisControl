@@ -85,15 +85,17 @@ struct VehicleParam{
 
 //整车运行状态，在整车运行过程中需按照固定时间间隔或消息帧间隔进行状态更新
 struct VehicleState{
-    float cur_velocity;                        // 当前车辆速度
-    float cur_acceleration;                    // 当前车辆加速度
-    float cur_steering_angle;                  // 当前车辆转向角
-    float target_velocity;                     // 目标车辆速度
-    float target_acceleration;                 // 目标车辆加速度
-    float target_steering_angle;               // 目标车辆转向角
-    std::vector<WheelState> tier_state;        // 车轮当前状态 
-    std::array<float,3> vehicle_posture;       // 整车当前姿态
-};
+    std::array<float,2> cur_velocity;                // 当前车辆速度(纵向，横向)
+    std::array<float,2> cur_acceleration;            // 当前车辆加速度(纵向，横向)
+    float cur_steering_angle;                        // 当前车辆转向角
+    std::array<float,2> target_velocity;             // 目标车辆速度(纵向，横向)
+    std::array<float,2> target_acceleration;         // 目标车辆加速度(纵向，横向)
+    float target_steering_angle;                     // 目标车辆转向角
+    std::array<float,3> target_position;             // 目标车辆位置
+    std::vector<WheelState> tier_state;              // 车轮当前状态 
+    std::array<float,3> vehicle_posture;             // 整车当前姿态
+    std::array<float,3> vehicle_position;           // 整车当前位置
+  };
 
 //车辆控制模式
 struct ControlMode{
