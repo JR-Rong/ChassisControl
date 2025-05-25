@@ -1,0 +1,15 @@
+# 忽略构建目录
+build/
+
+# 忽略IDE配置
+.vscode/
+
+# 忽略编译生成的文件
+*.exe
+examples/*.exe
+examples/basic_control_example.exe
+
+# 忽略编译生成的文件
+*.dll
+*.o
+*.obj
