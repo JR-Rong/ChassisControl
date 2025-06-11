@@ -34,17 +34,32 @@ set(CHASSIS_CONTROL_VERSION "${CHASSIS_CONTROL_VERSION_MAJOR}.${CHASSIS_CONTROL_
 include_directories(
   ${PROJECT_SOURCE_DIR}
   ${PROJECT_SOURCE_DIR}/include
+  ${PROJECT_SOURCE_DIR}/include/Vehicle_Control
   ${PROJECT_SOURCE_DIR}/include/Vehicle_Data_Input
+  ${PROJECT_SOURCE_DIR}/include/Vehicle_Data_Output
 )
 
 # 添加数据输入模块源文件
 set(DATA_INPUT_SOURCES
   ${PROJECT_SOURCE_DIR}/src/Vehicle_Data_Input/VehicleDataInput.cpp
+  ${PROJECT_SOURCE_DIR}/src/global_variables.cpp
+)
+
+# 添加数据输出模块源文件
+set(DATA_OUTPUT_SOURCES
+  ${PROJECT_SOURCE_DIR}/src/Vehicle_Data_Output/can_bus_interface.cpp
+)
+
+# 添加控制计算模块源文件
+set(DATA_CONTROL_SOURCES
+  ${PROJECT_SOURCE_DIR}/src/Vehicle_Control/VehicleControl.cpp
 )
 
 # 添加所有源文件到一个列表中
 set(ALL_SOURCES
   ${DATA_INPUT_SOURCES}
+  ${DATA_OUTPUT_SOURCES}
+  ${DATA_CONTROL_SOURCES}
 )
 
 # 创建单一的动态链接库，包含所有模块
@@ -96,40 +111,44 @@ add_custom_command(TARGET basic_control_example POST_BUILD
 # 安装头文件（只安装公共接口头文件）
 install(FILES chassis_control.h DESTINATION include)
 
-# 生成并安装导出目标
-install(TARGETS chassis_control basic_control_example
+# 配置安装路径
+include(GNUInstallDirs)
+set(INSTALL_CONFIGDIR ${CMAKE_INSTALL_LIBDIR}/cmake/chassis_control)
+
+# 导出目标
+install(TARGETS chassis_control
     EXPORT chassis_control-targets
-    RUNTIME DESTINATION bin
-    LIBRARY DESTINATION lib
-    ARCHIVE DESTINATION lib
-    PUBLIC_HEADER DESTINATION include
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/chassis_control
 )
 
-# 创建并安装版本配置文件
-include(CMakePackageConfigHelpers)
-write_basic_package_version_file(
-  "${CMAKE_CURRENT_BINARY_DIR}/chassis_control-config-version.cmake"
-  VERSION ${CHASSIS_CONTROL_VERSION}
-  COMPATIBILITY SameMajorVersion
+# 安装头文件
+install(FILES 
+    ${CMAKE_CURRENT_SOURCE_DIR}/chassis_control.h
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/chassis_control
 )
 
-# 安装导出目标
+# 导出目标
 install(EXPORT chassis_control-targets
-  FILE chassis_control-targets.cmake
-  DESTINATION lib/cmake/chassis_control
+    FILE chassis_control-targets.cmake
+    NAMESPACE chassis_control::
+    DESTINATION ${INSTALL_CONFIGDIR}
 )
 
 # 创建配置文件
+include(CMakePackageConfigHelpers)
 configure_file(cmake/chassis_control-config.cmake.in
-  "${CMAKE_CURRENT_BINARY_DIR}/chassis_control-config.cmake"
-  @ONLY
+    "${CMAKE_CURRENT_BINARY_DIR}/chassis_control-config.cmake"
+    @ONLY
 )
 
 # 安装配置文件
 install(FILES
-  "${CMAKE_CURRENT_BINARY_DIR}/chassis_control-config.cmake"
-  "${CMAKE_CURRENT_BINARY_DIR}/chassis_control-config-version.cmake"
-  DESTINATION lib/cmake/chassis_control
+    "${CMAKE_CURRENT_BINARY_DIR}/chassis_control-config.cmake"
+    DESTINATION ${INSTALL_CONFIGDIR}
 )
 
 # 打印配置信息

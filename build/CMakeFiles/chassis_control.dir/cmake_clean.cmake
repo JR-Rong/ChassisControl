@@ -1,6 +1,12 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/chassis_control.dir/src/Vehicle_Control/VehicleControl.cpp.obj"
+  "CMakeFiles/chassis_control.dir/src/Vehicle_Control/VehicleControl.cpp.obj.d"
   "CMakeFiles/chassis_control.dir/src/Vehicle_Data_Input/VehicleDataInput.cpp.obj"
   "CMakeFiles/chassis_control.dir/src/Vehicle_Data_Input/VehicleDataInput.cpp.obj.d"
+  "CMakeFiles/chassis_control.dir/src/Vehicle_Data_Output/can_bus_interface.cpp.obj"
+  "CMakeFiles/chassis_control.dir/src/Vehicle_Data_Output/can_bus_interface.cpp.obj.d"
+  "CMakeFiles/chassis_control.dir/src/global_variables.cpp.obj"
+  "CMakeFiles/chassis_control.dir/src/global_variables.cpp.obj.d"
   "bin/libchassis_control.dll"
   "bin/libchassis_control.dll.manifest"
   "bin/libchassis_control.pdb"

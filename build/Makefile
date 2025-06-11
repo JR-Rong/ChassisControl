@@ -210,6 +210,30 @@ examples/basic_control_example.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\basic_control_example.dir\build.make CMakeFiles/basic_control_example.dir/examples/basic_control_example.cpp.s
 .PHONY : examples/basic_control_example.cpp.s
 
+src/Vehicle_Control/VehicleControl.obj: src/Vehicle_Control/VehicleControl.cpp.obj
+.PHONY : src/Vehicle_Control/VehicleControl.obj
+
+# target to build an object file
+src/Vehicle_Control/VehicleControl.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\chassis_control.dir\build.make CMakeFiles/chassis_control.dir/src/Vehicle_Control/VehicleControl.cpp.obj
+.PHONY : src/Vehicle_Control/VehicleControl.cpp.obj
+
+src/Vehicle_Control/VehicleControl.i: src/Vehicle_Control/VehicleControl.cpp.i
+.PHONY : src/Vehicle_Control/VehicleControl.i
+
+# target to preprocess a source file
+src/Vehicle_Control/VehicleControl.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\chassis_control.dir\build.make CMakeFiles/chassis_control.dir/src/Vehicle_Control/VehicleControl.cpp.i
+.PHONY : src/Vehicle_Control/VehicleControl.cpp.i
+
+src/Vehicle_Control/VehicleControl.s: src/Vehicle_Control/VehicleControl.cpp.s
+.PHONY : src/Vehicle_Control/VehicleControl.s
+
+# target to generate assembly for a file
+src/Vehicle_Control/VehicleControl.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\chassis_control.dir\build.make CMakeFiles/chassis_control.dir/src/Vehicle_Control/VehicleControl.cpp.s
+.PHONY : src/Vehicle_Control/VehicleControl.cpp.s
+
 src/Vehicle_Data_Input/VehicleDataInput.obj: src/Vehicle_Data_Input/VehicleDataInput.cpp.obj
 .PHONY : src/Vehicle_Data_Input/VehicleDataInput.obj
 
@@ -234,6 +258,54 @@ src/Vehicle_Data_Input/VehicleDataInput.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\chassis_control.dir\build.make CMakeFiles/chassis_control.dir/src/Vehicle_Data_Input/VehicleDataInput.cpp.s
 .PHONY : src/Vehicle_Data_Input/VehicleDataInput.cpp.s
 
+src/Vehicle_Data_Output/can_bus_interface.obj: src/Vehicle_Data_Output/can_bus_interface.cpp.obj
+.PHONY : src/Vehicle_Data_Output/can_bus_interface.obj
+
+# target to build an object file
+src/Vehicle_Data_Output/can_bus_interface.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\chassis_control.dir\build.make CMakeFiles/chassis_control.dir/src/Vehicle_Data_Output/can_bus_interface.cpp.obj
+.PHONY : src/Vehicle_Data_Output/can_bus_interface.cpp.obj
+
+src/Vehicle_Data_Output/can_bus_interface.i: src/Vehicle_Data_Output/can_bus_interface.cpp.i
+.PHONY : src/Vehicle_Data_Output/can_bus_interface.i
+
+# target to preprocess a source file
+src/Vehicle_Data_Output/can_bus_interface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\chassis_control.dir\build.make CMakeFiles/chassis_control.dir/src/Vehicle_Data_Output/can_bus_interface.cpp.i
+.PHONY : src/Vehicle_Data_Output/can_bus_interface.cpp.i
+
+src/Vehicle_Data_Output/can_bus_interface.s: src/Vehicle_Data_Output/can_bus_interface.cpp.s
+.PHONY : src/Vehicle_Data_Output/can_bus_interface.s
+
+# target to generate assembly for a file
+src/Vehicle_Data_Output/can_bus_interface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\chassis_control.dir\build.make CMakeFiles/chassis_control.dir/src/Vehicle_Data_Output/can_bus_interface.cpp.s
+.PHONY : src/Vehicle_Data_Output/can_bus_interface.cpp.s
+
+src/global_variables.obj: src/global_variables.cpp.obj
+.PHONY : src/global_variables.obj
+
+# target to build an object file
+src/global_variables.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\chassis_control.dir\build.make CMakeFiles/chassis_control.dir/src/global_variables.cpp.obj
+.PHONY : src/global_variables.cpp.obj
+
+src/global_variables.i: src/global_variables.cpp.i
+.PHONY : src/global_variables.i
+
+# target to preprocess a source file
+src/global_variables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\chassis_control.dir\build.make CMakeFiles/chassis_control.dir/src/global_variables.cpp.i
+.PHONY : src/global_variables.cpp.i
+
+src/global_variables.s: src/global_variables.cpp.s
+.PHONY : src/global_variables.s
+
+# target to generate assembly for a file
+src/global_variables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\chassis_control.dir\build.make CMakeFiles/chassis_control.dir/src/global_variables.cpp.s
+.PHONY : src/global_variables.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -251,9 +323,18 @@ help:
 	@echo ... examples/basic_control_example.obj
 	@echo ... examples/basic_control_example.i
 	@echo ... examples/basic_control_example.s
+	@echo ... src/Vehicle_Control/VehicleControl.obj
+	@echo ... src/Vehicle_Control/VehicleControl.i
+	@echo ... src/Vehicle_Control/VehicleControl.s
 	@echo ... src/Vehicle_Data_Input/VehicleDataInput.obj
 	@echo ... src/Vehicle_Data_Input/VehicleDataInput.i
 	@echo ... src/Vehicle_Data_Input/VehicleDataInput.s
+	@echo ... src/Vehicle_Data_Output/can_bus_interface.obj
+	@echo ... src/Vehicle_Data_Output/can_bus_interface.i
+	@echo ... src/Vehicle_Data_Output/can_bus_interface.s
+	@echo ... src/global_variables.obj
+	@echo ... src/global_variables.i
+	@echo ... src/global_variables.s
 .PHONY : help
 
 

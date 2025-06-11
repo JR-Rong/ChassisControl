@@ -1,5 +1,7 @@
 #include <iostream>
-#include "Vehicle_Data_Input/VehicleDataInput.h" // Adjust the path based on the actual location of the header file
+#include "VehicleControl.h"
+#include "VehicleDataInput.h" // Adjust the path based on the actual location of the header file
+#include "global_variables.h" // Adjust the path based on the actual location of the header file
 
 /**
  * @brief 从配置文件中加载配置
@@ -18,6 +20,7 @@ bool LoadConfig(const std::string& config_file){
  * @return bool 是否初始化成功
  */
 bool Initialize(const VehicleParam& vehicle, const std::string& can_channel){
+    InitializeGlobalVariables(vehicle,can_channel); 
     std::cout << "Initialize" << std::endl;
     return true;
 }
@@ -28,6 +31,7 @@ bool Initialize(const VehicleParam& vehicle, const std::string& can_channel){
  * @return bool 更新是否成功
  */
 bool UpdateVehicleState(const VehicleState& vehicle_state){
+    UpdateGlobalVariables(vehicle_state);
     std::cout << "UpdateVehicleState" << std::endl;
     return true;
 }
@@ -36,6 +40,7 @@ bool UpdateVehicleState(const VehicleState& vehicle_state){
  * @param vehicle_dyanmic_param 待更新的整车参数
  */
 void UpdateDynamicParam(const DynamicParam& vehicle_dyanmic_param){
+    UpdateGlobalVariables(vehicle_dyanmic_param);
     std::cout << "UpdateDynamicParam" << std::endl;
     return ;
 }

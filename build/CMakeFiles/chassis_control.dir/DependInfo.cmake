@@ -8,7 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "D:/Project/ChassisControl/ChassisControl/src/Vehicle_Control/VehicleControl.cpp" "CMakeFiles/chassis_control.dir/src/Vehicle_Control/VehicleControl.cpp.obj" "gcc" "CMakeFiles/chassis_control.dir/src/Vehicle_Control/VehicleControl.cpp.obj.d"
   "D:/Project/ChassisControl/ChassisControl/src/Vehicle_Data_Input/VehicleDataInput.cpp" "CMakeFiles/chassis_control.dir/src/Vehicle_Data_Input/VehicleDataInput.cpp.obj" "gcc" "CMakeFiles/chassis_control.dir/src/Vehicle_Data_Input/VehicleDataInput.cpp.obj.d"
+  "D:/Project/ChassisControl/ChassisControl/src/Vehicle_Data_Output/can_bus_interface.cpp" "CMakeFiles/chassis_control.dir/src/Vehicle_Data_Output/can_bus_interface.cpp.obj" "gcc" "CMakeFiles/chassis_control.dir/src/Vehicle_Data_Output/can_bus_interface.cpp.obj.d"
+  "D:/Project/ChassisControl/ChassisControl/src/global_variables.cpp" "CMakeFiles/chassis_control.dir/src/global_variables.cpp.obj" "gcc" "CMakeFiles/chassis_control.dir/src/global_variables.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

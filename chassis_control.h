@@ -102,12 +102,12 @@ struct ControlMode{
 
 };
 
- /**
- * @brief 从配置文件中加载配置
- * @param config_file 配置文件路径
- * @return bool 是否成功加载
- */
-bool LoadConfig(const std::string& config_file);
+//  /**
+//  * @brief 从配置文件中加载配置
+//  * @param config_file 配置文件路径
+//  * @return bool 是否成功加载
+//  */
+// bool LoadConfig(const std::string& config_file);
 
 /**
  * @brief 初始化
@@ -115,7 +115,7 @@ bool LoadConfig(const std::string& config_file);
  * @param can_channel CAN通道
  * @return bool 是否初始化成功
  */
-bool Initialize(const VehicleParam& vehicle,const std::string& can_channel);
+bool Initialize(const VehicleParam& vehicle, const std::string& can_channel);
 
 /**
  * @brief 设置控制模式
@@ -134,12 +134,14 @@ bool UpdateVehicleState(const VehicleState& vehicle_state);
  * @brief 更新整车参数
  * @param vehicle_dyanmic_param 待更新的整车参数
  */ 
-void UpdateDynamicParam(const DynamicParam& vehicle_dyanmic_param);
+void UpdateDynamicParam(const DynamicParam& vehicle_dynamic_param);
 
 /**
  * @brief 紧急停止
  * @return bool 是否成功执行
  */
 bool EmergencyStop();
+
+bool SendCanMessage(const std::string& channel_name,int can_id);
 
 #endif // CHASSIS_CONTROL_H 

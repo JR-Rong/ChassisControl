@@ -141,4 +141,10 @@ CMakeFiles/chassis_control.dir/src/Vehicle_Data_Input/VehicleDataInput.cpp.obj: 
  D:/MinGW/lib/gcc/x86_64-w64-mingw32/15.1.0/include/c++/bits/stl_multimap.h \
  D:/MinGW/lib/gcc/x86_64-w64-mingw32/15.1.0/include/c++/bits/erase_if.h \
  D:/MinGW/lib/gcc/x86_64-w64-mingw32/15.1.0/include/c++/array \
- D:/MinGW/lib/gcc/x86_64-w64-mingw32/15.1.0/include/c++/compare
+ D:/MinGW/lib/gcc/x86_64-w64-mingw32/15.1.0/include/c++/compare \
+ D:/Project/ChassisControl/ChassisControl/include/global_variables.h \
+ D:/Project/ChassisControl/ChassisControl/include/Vehicle_Data_Input/VehicleDataInput.h \
+ D:/Project/ChassisControl/ChassisControl/include/Vehicle_Data_Output/can_bus_interface.h \
+ D:/MinGW/lib/gcc/x86_64-w64-mingw32/15.1.0/include/c++/cstdint \
+ D:/MinGW/lib/gcc/x86_64-w64-mingw32/15.1.0/include/stdint.h \
+ D:/MinGW/x86_64-w64-mingw32/include/stdint.h

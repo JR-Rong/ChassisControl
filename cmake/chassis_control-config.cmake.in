@@ -1,4 +1,4 @@
-
+@PACKAGE_INIT@
 
 include(CMakeFindDependencyMacro)
 # 如果项目依赖其他库，在这里添加find_dependency

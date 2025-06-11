@@ -86,19 +86,70 @@ CMakeFiles/chassis_control.dir/src/Vehicle_Data_Input/VehicleDataInput.cpp.s: cm
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chassis_control.dir/src/Vehicle_Data_Input/VehicleDataInput.cpp.s"
 	D:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Project\ChassisControl\ChassisControl\src\Vehicle_Data_Input\VehicleDataInput.cpp -o CMakeFiles\chassis_control.dir\src\Vehicle_Data_Input\VehicleDataInput.cpp.s
 
+CMakeFiles/chassis_control.dir/src/global_variables.cpp.obj: CMakeFiles/chassis_control.dir/flags.make
+CMakeFiles/chassis_control.dir/src/global_variables.cpp.obj: CMakeFiles/chassis_control.dir/includes_CXX.rsp
+CMakeFiles/chassis_control.dir/src/global_variables.cpp.obj: D:/Project/ChassisControl/ChassisControl/src/global_variables.cpp
+CMakeFiles/chassis_control.dir/src/global_variables.cpp.obj: CMakeFiles/chassis_control.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\ChassisControl\ChassisControl\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/chassis_control.dir/src/global_variables.cpp.obj"
+	D:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chassis_control.dir/src/global_variables.cpp.obj -MF CMakeFiles\chassis_control.dir\src\global_variables.cpp.obj.d -o CMakeFiles\chassis_control.dir\src\global_variables.cpp.obj -c D:\Project\ChassisControl\ChassisControl\src\global_variables.cpp
+
+CMakeFiles/chassis_control.dir/src/global_variables.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/chassis_control.dir/src/global_variables.cpp.i"
+	D:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Project\ChassisControl\ChassisControl\src\global_variables.cpp > CMakeFiles\chassis_control.dir\src\global_variables.cpp.i
+
+CMakeFiles/chassis_control.dir/src/global_variables.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chassis_control.dir/src/global_variables.cpp.s"
+	D:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Project\ChassisControl\ChassisControl\src\global_variables.cpp -o CMakeFiles\chassis_control.dir\src\global_variables.cpp.s
+
+CMakeFiles/chassis_control.dir/src/Vehicle_Data_Output/can_bus_interface.cpp.obj: CMakeFiles/chassis_control.dir/flags.make
+CMakeFiles/chassis_control.dir/src/Vehicle_Data_Output/can_bus_interface.cpp.obj: CMakeFiles/chassis_control.dir/includes_CXX.rsp
+CMakeFiles/chassis_control.dir/src/Vehicle_Data_Output/can_bus_interface.cpp.obj: D:/Project/ChassisControl/ChassisControl/src/Vehicle_Data_Output/can_bus_interface.cpp
+CMakeFiles/chassis_control.dir/src/Vehicle_Data_Output/can_bus_interface.cpp.obj: CMakeFiles/chassis_control.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\ChassisControl\ChassisControl\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/chassis_control.dir/src/Vehicle_Data_Output/can_bus_interface.cpp.obj"
+	D:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chassis_control.dir/src/Vehicle_Data_Output/can_bus_interface.cpp.obj -MF CMakeFiles\chassis_control.dir\src\Vehicle_Data_Output\can_bus_interface.cpp.obj.d -o CMakeFiles\chassis_control.dir\src\Vehicle_Data_Output\can_bus_interface.cpp.obj -c D:\Project\ChassisControl\ChassisControl\src\Vehicle_Data_Output\can_bus_interface.cpp
+
+CMakeFiles/chassis_control.dir/src/Vehicle_Data_Output/can_bus_interface.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/chassis_control.dir/src/Vehicle_Data_Output/can_bus_interface.cpp.i"
+	D:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Project\ChassisControl\ChassisControl\src\Vehicle_Data_Output\can_bus_interface.cpp > CMakeFiles\chassis_control.dir\src\Vehicle_Data_Output\can_bus_interface.cpp.i
+
+CMakeFiles/chassis_control.dir/src/Vehicle_Data_Output/can_bus_interface.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chassis_control.dir/src/Vehicle_Data_Output/can_bus_interface.cpp.s"
+	D:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Project\ChassisControl\ChassisControl\src\Vehicle_Data_Output\can_bus_interface.cpp -o CMakeFiles\chassis_control.dir\src\Vehicle_Data_Output\can_bus_interface.cpp.s
+
+CMakeFiles/chassis_control.dir/src/Vehicle_Control/VehicleControl.cpp.obj: CMakeFiles/chassis_control.dir/flags.make
+CMakeFiles/chassis_control.dir/src/Vehicle_Control/VehicleControl.cpp.obj: CMakeFiles/chassis_control.dir/includes_CXX.rsp
+CMakeFiles/chassis_control.dir/src/Vehicle_Control/VehicleControl.cpp.obj: D:/Project/ChassisControl/ChassisControl/src/Vehicle_Control/VehicleControl.cpp
+CMakeFiles/chassis_control.dir/src/Vehicle_Control/VehicleControl.cpp.obj: CMakeFiles/chassis_control.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\ChassisControl\ChassisControl\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/chassis_control.dir/src/Vehicle_Control/VehicleControl.cpp.obj"
+	D:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chassis_control.dir/src/Vehicle_Control/VehicleControl.cpp.obj -MF CMakeFiles\chassis_control.dir\src\Vehicle_Control\VehicleControl.cpp.obj.d -o CMakeFiles\chassis_control.dir\src\Vehicle_Control\VehicleControl.cpp.obj -c D:\Project\ChassisControl\ChassisControl\src\Vehicle_Control\VehicleControl.cpp
+
+CMakeFiles/chassis_control.dir/src/Vehicle_Control/VehicleControl.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/chassis_control.dir/src/Vehicle_Control/VehicleControl.cpp.i"
+	D:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Project\ChassisControl\ChassisControl\src\Vehicle_Control\VehicleControl.cpp > CMakeFiles\chassis_control.dir\src\Vehicle_Control\VehicleControl.cpp.i
+
+CMakeFiles/chassis_control.dir/src/Vehicle_Control/VehicleControl.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chassis_control.dir/src/Vehicle_Control/VehicleControl.cpp.s"
+	D:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Project\ChassisControl\ChassisControl\src\Vehicle_Control\VehicleControl.cpp -o CMakeFiles\chassis_control.dir\src\Vehicle_Control\VehicleControl.cpp.s
+
 # Object files for target chassis_control
 chassis_control_OBJECTS = \
-"CMakeFiles/chassis_control.dir/src/Vehicle_Data_Input/VehicleDataInput.cpp.obj"
+"CMakeFiles/chassis_control.dir/src/Vehicle_Data_Input/VehicleDataInput.cpp.obj" \
+"CMakeFiles/chassis_control.dir/src/global_variables.cpp.obj" \
+"CMakeFiles/chassis_control.dir/src/Vehicle_Data_Output/can_bus_interface.cpp.obj" \
+"CMakeFiles/chassis_control.dir/src/Vehicle_Control/VehicleControl.cpp.obj"
 
 # External object files for target chassis_control
 chassis_control_EXTERNAL_OBJECTS =
 
 bin/libchassis_control.dll: CMakeFiles/chassis_control.dir/src/Vehicle_Data_Input/VehicleDataInput.cpp.obj
+bin/libchassis_control.dll: CMakeFiles/chassis_control.dir/src/global_variables.cpp.obj
+bin/libchassis_control.dll: CMakeFiles/chassis_control.dir/src/Vehicle_Data_Output/can_bus_interface.cpp.obj
+bin/libchassis_control.dll: CMakeFiles/chassis_control.dir/src/Vehicle_Control/VehicleControl.cpp.obj
 bin/libchassis_control.dll: CMakeFiles/chassis_control.dir/build.make
 bin/libchassis_control.dll: CMakeFiles/chassis_control.dir/linkLibs.rsp
 bin/libchassis_control.dll: CMakeFiles/chassis_control.dir/objects1.rsp
 bin/libchassis_control.dll: CMakeFiles/chassis_control.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\Project\ChassisControl\ChassisControl\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library bin\libchassis_control.dll"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\Project\ChassisControl\ChassisControl\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX shared library bin\libchassis_control.dll"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\chassis_control.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
